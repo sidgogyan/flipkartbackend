@@ -8,6 +8,7 @@ const mongoose=require('mongoose');
 //routes
 const authRoutes=require('./routes/auth');
 const adminRoutes=require("./routes/admin/auth")
+const categoryRoutes=require("./routes/category");
 
 //enviroment variable
 env.config();
@@ -30,6 +31,7 @@ mongoose.connect("mongodb://localhost:27017/Rootcode",{
 app.use(bodyParser.json());
 app.use('/api',authRoutes);
 app.use('/api',adminRoutes);
+app.use('/api',categoryRoutes);
 
 
 
